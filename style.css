@@ -1,0 +1,115 @@
+html, body {
+    height: 100%;
+    font-family: Tahoma, Geneva, sans-serif;
+}
+
+#container {
+    display: flex;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/* Otsakkeen tyylittelyt */
+
+header {
+    background-color: deepskyblue;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+    text-align: center;
+    color: #fff;
+}
+
+/* Sisällön tyylittelyt */
+
+#content {
+    width: 100%;
+    transform: translateX(0);
+    transition: transform .4s;
+}
+
+#text {
+    padding: 0 40px;
+}
+
+/* Menu-valikon tyylittelyt */
+
+#menubar {
+    background-color: dimgrey;
+    height: 100%;
+    width: 250px;
+    position: absolute;
+    left: 0;
+    transform: translateX(-250px);
+    transition: transform .4s;
+}
+
+#menu {
+    margin: 35px 0 0 0;
+}
+
+#menu li {
+    list-style-type: none;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+    padding: 20px 0;
+}
+
+#menu li:first-child {
+    border-top: 1px solid #eee;
+}
+
+#menu li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Menun esilletuontipainikkeiden tyylittelyt ja toiminnot */
+
+input[type=checkbox] {
+    display: none;
+}
+
+label.open {
+    position: absolute;
+    top: 15px;
+    left: 40px;
+    z-index: 1;
+    display: block;
+    font-size:3em;
+    color: #ffffff;
+    cursor: pointer;
+    transform: translateX(0);
+    transition: transform .4s;
+}
+
+label.close {
+    position: absolute;
+    top: 15px;
+    left: -230px;
+    z-index: 1;
+    display: block;
+    font-size:1.1em;
+    color: #ffffff;
+    cursor: pointer;
+    transform: translateX(0);
+    transition: transform .4s;
+}
+
+label.close:hover {
+    color: red;
+}
+
+input[type=checkbox]:checked ~ label {
+    transform: translateX(250px);
+}
+
+input[type=checkbox]:checked ~ #menubar {
+    transform: translateX(0);
+}
+
+input[type=checkbox]:checked ~ #content {
+    transform: translateX(250px);
+}

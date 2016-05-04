@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Sivunavigaatiopalkki</title>
+</head>
+<body>
+    <div id="container" ng-app="valikko" ng-controller="controller">
+        <input id="open" type="checkbox"><label class="open" for="open">+</label>
+        <label class="close" for="open">X</label>
+        <div id="menubar">
+            <nav id="menu">
+                <li><a href="#">Sivu 1</a></li>
+                <li><a href="#sivu2">Sivu 2</a></li>
+                <li><a href="#sivu3">Sivu 3</a></li>
+            </nav>
+        </div>
+        <div id="content">
+            <header>
+                <h1>Lorem Ipsum</h1>
+            </header>
+            <div id="text" ng-view></div>
+        </div>
+    </div>
+</body>    
+</html>
